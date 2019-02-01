@@ -1,0 +1,62 @@
+@import "~/../../../../styles/theme/index.scss";
+.container {
+    width: 100%;
+    margin-bottom: 50px;
+    img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+    >div {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        >div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 300px;
+            font-size: 26px;
+            font-family: 'lato';
+            color: $active-color;
+            transition: font-size 0.5s ease-in;
+            &:nth-child(3) {
+                width: 950px;
+                text-align: justify;
+            }
+        }
+        >span {
+            width: 1px;
+            height: auto;
+            margin: 0 15px;
+            background-color: $bg-color;
+        }
+    }
+}
+
+.mat-flat-button {
+    align-self: flex-end;
+    width: 50px;
+    margin: 20px 0;
+    background-color: $bg-color;
+}
+
+@media screen and (max-width: 1630px) {
+    .container {
+        >div {
+            justify-content: center;
+            >div {
+                font-size: 22px;
+                transition: font-size 0.5s ease-out;
+                &:first-child {
+                    align-items: center;
+                    padding-bottom: 25px;
+                }
+            }
+            span {
+                width: 0;
+            }
+        }
+    }
+}

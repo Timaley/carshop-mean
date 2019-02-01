@@ -1,0 +1,9 @@
+<input [(ngModel)]="searchString" />
+<!-- {{searchData$ | async | json}} -->
+<ul *ngIf="searchData$">
+    <li *ngFor="let item of searchData$ | async | searchFilter:searchString" (click)="onClick(item)">
+        <img src={{item.image}}>
+        {{item.title}}
+        {{item?._description}}
+    </li>
+</ul>

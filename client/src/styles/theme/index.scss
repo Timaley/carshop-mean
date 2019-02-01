@@ -1,0 +1,33 @@
+$bg-color: #4f4f4f;
+$active-color: #333333;
+$icon-hover: #6E6E6E;
+$global-font: 'Lato', Arial, sans-serif;
+$white-color: #ffffff;
+
+.submit-btn {
+    width: 220px;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-radius: 3px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: center;
+	background: $active-color;
+	color: white;
+}
+
+@media (max-width: 760px){
+    .submit-btn{
+        width: 180px;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 410px){
+    .submit-btn{
+        width: 75%;
+        font-size: 12px;
+    }
+}

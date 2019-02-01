@@ -1,0 +1,11 @@
+<!-- <div class="select-button__container"> -->
+<!-- <div *ngIf="!icon && !isUploading" (click)="select()"> -->
+<div (click)="select()">
+    <ng-content></ng-content>
+</div>
+<!-- <mat-icon [style.color]="color" *ngIf="icon && !isUploading" (click)="select()">{{ icon }}</mat-icon> -->
+<!-- <div *ngIf="isUploading" class="loader"></div> -->
+<!-- </div> -->
+<!-- <input #fileSelector type="file" [accept]="supportedFormats | fileEnumKey:true" (change)="loadFile($event)"> -->
+<input #fileSelector type="file" [accept]="supportedFormats" (change)="loadFile($event)">
+<!-- <button (click)="loadFile($event)">x</button> -->

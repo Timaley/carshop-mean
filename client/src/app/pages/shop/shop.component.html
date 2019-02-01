@@ -1,0 +1,22 @@
+<button mat-icon-button (click)="goHome()">
+    <i class="material-icons">keyboard_backspace</i>
+</button>
+<!-- <div class="search">
+        <label>
+            <h3>Search:</h3>
+            <input [(ngModel)]="searchString" [ngModelOptions]="{standalone: true}"/>
+        </label>
+</div> -->
+<div class="cards">
+    <div></div>
+    <!-- <shop-item class="cards-item" *ngFor="let car of (cars$ | async | searchFilter:searchString)" [car]="car" (deleteClick)="onDeleteClick($event)" -->
+    <shop-item class="cards-item" *ngFor="let car of (cars$ | async)" [car]="car" (deleteClick)="onDeleteClick($event)"
+        (editClick)="onEditClick($event)" (click)="onClick(car._id)"></shop-item>
+    <div class="add-card cards-item" (click)="onAddClick()">
+        <mat-card>
+            <i class="material-icons add-icon">add_circle_outline</i>
+        </mat-card>
+    </div>
+</div>
+{{shop$ | async | json}}
+{{cars$ | async | json}}

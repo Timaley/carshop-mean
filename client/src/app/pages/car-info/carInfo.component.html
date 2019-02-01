@@ -1,0 +1,23 @@
+<div class="container">
+    <button mat-icon-button (click)="goHome()">
+        <i class="material-icons">keyboard_backspace</i>
+    </button>
+    <img *ngIf="data$ | async as data" src="{{data.img}}" alt="Car image">
+    <div *ngIf="data$ | async as data">
+        <div>
+            <p>Бренд: {{ data.brand }}</p>
+            <p>Модель: {{ data.model }}</p>
+            <p>Год выпуска: {{ data.age }}</p>
+            <p>Цвет: {{ data.color }}</p>
+            <p>Цена: {{ data.price | currency:"USD":"symbol":'1.0'}}</p>
+        </div>
+        <span></span>
+        <div>
+            <p>{{ data.description }}</p>
+            <button mat-flat-button (click)="goEdit()">
+                <i class="material-icons">edit</i>
+                <span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

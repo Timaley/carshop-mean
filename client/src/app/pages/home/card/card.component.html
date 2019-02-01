@@ -1,0 +1,11 @@
+<mat-card class="card">
+	<mat-card-title class="title">{{ carShop.name }}</mat-card-title>
+	<img mat-card-image src="{{carShop.imgShop}}" alt="Photo of car">
+	<div class="container">
+		<mat-card-actions>
+            <i (click)="onContactClick()" class="material-icons">email</i>
+            <i (click)="onDeleteClick()" class="material-icons">delete</i>
+            
+		</mat-card-actions>
+	</div>
+</mat-card>

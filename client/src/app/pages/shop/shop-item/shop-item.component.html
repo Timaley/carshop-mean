@@ -1,0 +1,20 @@
+<mat-card class="card">
+    <!-- <mat-card-header (click)="onNameClick()" title="Click to create a form"> -->
+    <mat-card-header title="Click to create a form">
+        <mat-card-title class="title">{{car?.brand}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{car?.img}}" alt="Photo of car">
+    <div class="container">
+        <mat-card-content>
+            <p>{{car?.model}} ({{car?.age}})</p>
+            <p>{{car?.price | currency:"USD":"symbol":'1.0' }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <i (click)="onEditClick($event, car._id)" class="material-icons">edit</i>
+            <i (click)="onDeleteClick($event, car._id)" class="material-icons">delete</i>
+        </mat-card-actions>
+
+
+    </div>
+</mat-card>

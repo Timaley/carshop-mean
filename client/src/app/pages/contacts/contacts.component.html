@@ -1,0 +1,37 @@
+<div *ngIf='!data$ || (data$ | async)'>
+    <form [formGroup]="contactsForm" (ngSubmit)="onSubmit()" class="mat-elevation-z8">
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Сommunication form to:</mat-label>
+                <input matInput type="text" placeholder="Shop" formControlName="carShopemail">
+                <mat-icon matSuffix>store</mat-icon>
+                <mat-hint *ngIf="">Shop name</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Name:</mat-label>
+                <input matInput type="text" placeholder="Introduce yourself" required autofocus formControlName="firstName">
+                <mat-icon matSuffix>how_to_reg</mat-icon>
+                <mat-hint *ngIf="isControlInvalid('firstName')">Change language or less than 4 characters</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+                <mat-label>Your e-mail:</mat-label>
+                <input matInput type="email" placeholder="Enter your e-mail" required formControlName="email">
+                <mat-icon matSuffix>mail_outline</mat-icon>
+                <mat-hint *ngIf="isControlInvalid('email')">Enter in the format mail@post.com</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width">
+                <mat-label>Your message here:</mat-label>
+                <textarea matInput class="text-message" type="text" placeholder="Your message" formControlName="textArea"></textarea>
+                <mat-icon matSuffix>question_answer</mat-icon>
+            </mat-form-field>
+        </p>
+        <p class="shopemail">Car Shop carshop@gmail.com</p>
+        <button class="submit-btn" type="submit" mat-raised-button color="primary">Send</button>
+    </form>
+</div>

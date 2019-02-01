@@ -1,0 +1,68 @@
+@import "~/../../../../styles/theme/index.scss";
+div {
+    display: flex;
+    width: 100%;
+    form {
+        margin: 50px auto;
+        padding: 32px;
+        p {
+            text-align: center;
+            mat-form-field {
+                width: 400px;
+                margin-bottom: 20px;
+                textarea {
+                    height: 200px;
+                    resize: none;
+                }
+            }
+        }
+        .shopemail {
+            padding: 10px;
+            font-family: $global-font;
+            font-size: 14px;
+            text-align: center;
+            color: gray;
+        }
+        .mat-raised-button {
+            background-color: $active-color;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    div {
+        form {
+            margin: 32px auto;
+            padding: 6vw;
+            p {
+                mat-form-field {
+                    width: 300px;
+                    margin-bottom: 10px;
+                    textarea {
+                        height: 150px;
+                    }
+                }
+            }
+            .shopemail {
+                padding: 5px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    div {
+        form {
+            font-size: 12px;
+            p {
+                mat-form-field {
+                    width: 72vw;
+                }
+            }
+            .shopemail {
+                font-size: 10px;
+            }
+        }
+    }
+}

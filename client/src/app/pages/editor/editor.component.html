@@ -1,0 +1,64 @@
+<div *ngIf="!editorMode || (data$ | async)">
+    <form [formGroup]="carForm" (ngSubmit)="onSubmit()" class="mat-elevation-z8">
+        <h3>{{editorMode ? 'Edit car' : 'Add new car'}}</h3>
+        <img [src]="carForm.controls['img']?.value || imagePath">
+
+
+
+        <!-- <upload-button></upload-button> -->
+
+        <!-- <div class="uploader-button">
+        <upload-button [supportedFormats]="supportedFormats" [isMakePreview]="false" #uploader>
+            <label class="label label--file">
+            </label>
+        </upload-button>
+    </div> -->
+        <!-- <ul class="input__files">
+        <li class="input__file" *ngIf="uploader.fileName" (click)="uploader.clear()"><span>{{uploader.fileName}}xxx</span></li>
+    </ul> -->
+    <!-- <button type="!!!" (click)="onUploadClick()">xxx</button> -->
+    
+    <div class="upload-button-container">
+
+        <div class="uploader-button">
+            <upload-button (isFileChangeded)='getPath($event)' [supportedFormats]="supportedFormats"
+                [isMakePreview]="false" #uploader>
+                <label class="upload-label">
+                    <mat-icon matSuffix>cloud_download</mat-icon>
+                </label>
+            </upload-button>
+        </div>
+    </div>
+        <mat-form-field class="image">
+            <input matInput placeholder="Image (Url)" formControlName="img">
+            <mat-icon matSuffix>link</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Color" formControlName="color">
+            <mat-icon matSuffix>color_lens</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Brand" formControlName="brand">
+            <mat-icon matSuffix>details</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Model" formControlName="model">
+            <mat-icon matSuffix>panorama_fish_eye</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input type='number' matInput placeholder="Year" formControlName="age">
+            <mat-icon matSuffix>calendar_today</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <input type='number' matInput placeholder="Price" formControlName="price">
+            <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Description" formControlName="description"></textarea>
+            <mat-icon matSuffix>info</mat-icon>
+        </mat-form-field>
+        <button class="submit-btn" mat-raised-button type="submit">
+            {{editorMode ? 'Save' : 'Add'}}
+        </button>
+    </form>
+</div>

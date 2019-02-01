@@ -1,0 +1,11 @@
+<main class="cards">
+	<card-content class="cards-item" *ngFor="let card of carShops$ | async; let i=index" (click)="onClick(card._id)" [carShop]="card"
+	 [carIndex]="i"></card-content>
+	<!-- <div class="add-card cards-item" (click)="openAddCarDialog()">
+		<mat-card>
+			<i class="material-icons add-icon">add_circle_outline</i>
+		</mat-card>
+	</div> -->
+</main>
+{{carShops$ | async | json}}
+<!-- {{cars$ | async | json}} -->

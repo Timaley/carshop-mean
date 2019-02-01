@@ -1,0 +1,91 @@
+@import "~/../../../../styles/theme/index.scss";
+.content-box {
+    width: 100%;
+    padding: 25px 50px 0 50px;
+    height: 100vh;
+    overflow: auto;
+    button {
+        display: none;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+    }
+}
+
+mat-sidenav {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100%;
+    font-family: $global-font;
+	background-color: $bg-color;
+	overflow: hidden;
+    .logo {
+        align-self: center;
+        color: $white-color;
+        font-size: 2.5em;
+        margin: 30px 0 0px 0;
+        font-style: italic;
+        font-weight: 900;
+        text-decoration: underline;
+        cursor: pointer;
+        user-select: none;
+    }
+    .mat-list-item {
+        display: flex;
+        height: 40px;
+        font-size: 1.25em;
+        width: 100%;
+        padding: 0;
+        text-transform: uppercase;
+        color: $white-color;
+        p {
+            width: 250px;
+            padding: 0 30px;
+        }
+    }
+}
+
+mat-nav-list {
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+    height: 48px;
+}
+
+.icon-menu {
+    background: $white-color;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 0;
+}
+
+mat-icon {
+    font-size: 44px;
+    width: 44px;
+    height: 44px;
+}
+
+search {
+    margin: 16px auto 0;
+}
+
+@media screen and (max-width: 760px) {
+    .content-box {
+        button {
+            display: flex;
+            mat-icon {
+                font-size: 44px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    .content-box {
+        padding: 54px 24px 24px;
+    }
+}

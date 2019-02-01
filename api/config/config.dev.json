@@ -1,0 +1,14 @@
+{
+    "apiUrl": "http://localhost:3000/api",
+    "baseUrl": "http://localhost:8000",
+    "accounts": {
+        "admin": {
+            "username": "admin",
+            "password": "12345"
+        }
+    },
+    "mongo": {
+        "url": "mongodb://localhost:27017",
+        "dbName": "carShopDB"
+    }
+}

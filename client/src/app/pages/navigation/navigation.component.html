@@ -1,0 +1,33 @@
+<div class="container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-sidenav-container>
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            [opened]="mobileQuery.matches ? 'false' : 'true'" [disableClose]="mobileQuery.matches ? 'false' : 'true'">
+        <!-- <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            [opened]="mobileQuery.matches ? 'false' : 'true'" [disableClose]="true"> -->
+            <div class="logo" routerLink="/home">
+                <h1>CarShop</h1>
+            </div>
+            <mat-nav-list (click)="mobileQuery.matches ? snav.toggle(): null">
+                <a mat-list-item routerLink="/home" routerLinkActive="active">
+                    <p>Home</p>
+                </a>
+                <a mat-list-item routerLink="/contacts" routerLinkActive="active">
+                    <p>Contacts</p>
+                </a>
+                <!-- <a mat-list-item routerLink="/edit" routerLinkActive="active">
+                    <p>Edit</p>
+                </a> -->
+            </mat-nav-list>
+            <search (closeSideNav)="mobileQuery.matches ? snav.toggle(): null"></search>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content-box">
+                <button class="icon-menu mat-elevation-z8" (click)="snav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
